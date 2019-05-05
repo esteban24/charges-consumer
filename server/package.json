@@ -2,7 +2,7 @@
   "name": "charges-consumer-server",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://charges-consumer:80",
+  "homepage": "http://charges-consumer:5000",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4"

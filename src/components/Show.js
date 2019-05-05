@@ -14,7 +14,7 @@ class Show extends Component {
   componentDidMount() {
       const { match: { params } } = this.props;
 
-      axios.get('http://charges-server:3001/api/charges/' + params.chargeId)
+      axios.get('http://' + process.env.REACT_APP_API_SERVER_HOST + ':3001/api/charges/' + params.chargeId)
       .then(res => this.setState({ charge: res.data }))
       .catch(err => this.setState({ err }));
   }

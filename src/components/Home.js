@@ -18,13 +18,13 @@ class Home extends Component {
   }
 
   loadCharges() {
-    axios.get('http://charges-server:3001/api/charges')
+    axios.get('http://' + process.env.REACT_APP_API_SERVER_HOST + ':3001/api/charges')
     .then(res => this.setState({ charges: res.data }))
     .catch(err => this.setState({ err }));
   }
 
   handleDelete(id) {
-    axios.delete('http://charges-server:3001/api/charges/' + id)
+    axios.delete('http://' + process.env.REACT_APP_API_SERVER_HOST + ':3001/api/charges/' + id)
     .then(res => {
         this.removeCharge(id);
         return res;

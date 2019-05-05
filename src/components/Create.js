@@ -29,7 +29,7 @@ class Create extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    return axios.post('http://charges-server:3001/api/charges', {
+    return axios.post('http://' + process.env.REACT_APP_API_SERVER_HOST + ':3001/api/charges', {
         data: {
           description: this.state.description,
           amount: this.state.amount
