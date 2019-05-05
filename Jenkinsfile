@@ -25,13 +25,15 @@ pipeline {
                 echo 'Generating production optimized files'
                 sh 'npm run build'
 
-                echo 'Installing production server'
-                workdir('server') {
-                    sh 'npm install'
+                echo 'Installing production server and starting it'
+                sh 'cd server && npm install && STATIC_CONTENT=../build npm start'
 
-                    echo 'Starting server'
-                    sh 'STATIC_CONTENT=../build npm start'
-                }
+                // workdir('server') {
+                //     sh 'npm install'
+
+                //     echo 'Starting server'
+                //     sh 'STATIC_CONTENT=../build npm start'
+                // }
             }
         }
         // stage('Docker build') {
