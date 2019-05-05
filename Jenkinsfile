@@ -17,7 +17,7 @@ pipeline {
         stage('Test UT') {
             steps {
                 echo 'Unit Testing React components'
-                sh 'npm test'
+                sh 'CI=true npm test'
             }
         }
         stage('Deploy') {
