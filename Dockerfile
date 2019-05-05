@@ -1,8 +1,4 @@
-# FROM nginx:1.16
-
-# COPY ./build /usr/share/nginx/html
-
-FROM node:12-alpine as builder
+FROM node:10-alpine as builder
 
 RUN mkdir /app
 
@@ -15,8 +11,9 @@ RUN	npm run build
 WORKDIR /app/server
 RUN npm install
 
-FROM node:12-alpine
+FROM node:10-alpine
 
+ENV REACT_APP_API_SERVER_HOST charges-server
 ENV STATIC_CONTENT /app/public
 
 RUN mkdir /app \
