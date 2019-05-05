@@ -10,7 +10,7 @@ Source code repository of the React consumer app for the charges-server API.
 
 ## Installation with Docker
 
-First of all, lets create the network to communicate between server and consumer:
+First of all, lets create the network to communicate between server and consumers:
 
 `$ docker create network <network_name>`
 
