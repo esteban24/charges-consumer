@@ -24,8 +24,7 @@ pipeline {
             steps {
                 echo 'Generating production optimized files'
                 sh 'npm run build'
-            }
-            steps {
+
                 echo 'Installing production server'
                 workdir('server') {
                     sh 'npm install'
