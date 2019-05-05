@@ -31,7 +31,7 @@ pipeline {
                     'npm install'
 
                     echo 'Starting server'
-                    'STATIC_CONTENT=../build npm start'
+                    sh 'STATIC_CONTENT=../build npm start'
                 }
             }
         }
