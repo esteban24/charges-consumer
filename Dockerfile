@@ -27,6 +27,6 @@ COPY --from=builder /app/server /app
 
 WORKDIR /app
 
-EXPOSE 80
+EXPOSE 5000
 
 ENTRYPOINT ["npm", "start"]
