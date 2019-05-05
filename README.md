@@ -1,6 +1,6 @@
 # charges-consumer React App
 
-Source code repository to the React app consumer for the charges-server API.
+Source code repository of the React consumer app for the charges-server API.
 
 ## Requirements
 
