@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo 'Installing production server'
                 workdir('server') {
-                    'npm install'
+                    sh 'npm install'
 
                     echo 'Starting server'
                     sh 'STATIC_CONTENT=../build npm start'
