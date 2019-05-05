@@ -14,11 +14,11 @@ First of all, lets create the network to communicate between server and consumer
 
 `$ docker create network <network_name>`
 
-In order to let communicate between server and consumer, the consumer must know the hostname the Docker container server will have. This is an example with server hostname: `charges-server`:
+In order to let communicate between server and consumer, the consumer must know the hostname the Docker container server will have.
 
-1. Modify the .env file (REACT_APP_API_SERVER_HOST=localhost by default):
+1. Modify the .env file (REACT_APP_API_SERVER_HOST=charges-server by default):
 
-	`REACT_APP_API_SERVER_HOST=charges-server`
+	`REACT_APP_API_SERVER_HOST=<server_hostname>`
 
 2. Docker build:
 
@@ -72,6 +72,8 @@ This project comes with some tests to check every view renders properly (using J
 	```
 
 ## Serving
+
+Change the .env file and put `localhost` to the environment variable in order to test in your local machine.
 
 ### Development mode
 
