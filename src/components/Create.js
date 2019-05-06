@@ -30,17 +30,14 @@ class Create extends Component {
     e.preventDefault();
 
     return axios.post('http://' + process.env.REACT_APP_API_SERVER_HOST + ':3001/api/charges', {
-        data: {
-          description: this.state.description,
-          amount: this.state.amount
-        },
-        headers: {
-            'Content-Type': 'application/json'
-        }
+      description: this.state.description,
+      amount: this.state.amount
     }).then(res => {
         this.setState({ redirectToNewPage: true });
         return res;
-    }).catch(err => err);
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
   render() {
@@ -65,7 +62,7 @@ class Create extends Component {
                 </div>
                 <div className="form-group">
                   <label>Quantity</label>
-                  <input type="number" className="form-control" name="amount" id="amount" placeholder="Introduce quantity" required="required" value={this.state.amount} onChange={this.handleInputChange} min="1" step="0.01"/>
+                  <input type="number" className="form-control" name="amount" id="amount" placeholder="Introduce quantity" required="required" value={this.state.amount} onChange={this.handleInputChange} min="1" max="9999" step="0.01"/>
                   <small id="amountHelp" className="form-text text-muted">Introduce a positive quantity.</small>
                 </div>
                 <button type="submit" className="btn btn-primary">Send</button>
