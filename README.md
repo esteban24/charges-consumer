@@ -14,21 +14,15 @@ First of all, lets create the network to communicate between server and consumer
 
 `$ docker create network <network_name>`
 
-In order to let communicate between server and consumer, the consumer must know the hostname the Docker container server will have.
-
-1. Modify the .env file (REACT_APP_API_SERVER_HOST=charges-server by default):
-
-	`REACT_APP_API_SERVER_HOST=<server_hostname>`
-
-2. Docker build:
+1. Docker build:
 
 	` $ docker build -t <charges_consumer_image_tag>:<version> .`
 
-3. Docker run (the app port is 5000):
+2. Docker run (the app port is 5000):
 
 	` $ docker run --name <container_name> -h <container_hostname> --network <network_name> -p 5000:5000 -d <charges_consumer_image_tag>:<version>`
 
-4. Check the consumer is up:
+3. Check the consumer is up:
 
 	```
 	$ curl http://localhost:5000/ping
@@ -72,8 +66,6 @@ This project comes with some tests to check every view renders properly (using J
 	```
 
 ## Serving
-
-Change the .env file and put `localhost` to the environment variable in order to test in your local machine.
 
 ### Development mode
 
