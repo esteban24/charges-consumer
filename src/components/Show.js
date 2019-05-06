@@ -24,7 +24,7 @@ class Show extends Component {
       <div className="Show">
         <div className="panel panel-default">
           <div className="panel-heading">
-            <h3 className="panel-title">Detalle</h3>
+            <h3 className="panel-title">Detail</h3>
           </div>
           <div className="panel-body">
             <table className="table table-responsive">
