@@ -55,20 +55,20 @@ class Create extends Component {
         <div className="Create">
           <div className="panel panel-default">
             <div className="panel-heading">
-              <h3 className="panel-title">Nuevo cargo</h3>
+              <h3 className="panel-title">New Charge</h3>
             </div>
             <div className="panel-body">
               <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                  <label>Descripción</label>
+                  <label>Description</label>
                   <input type="text" className="form-control" name="description" id="description" placeholder="Introduzca una descripción" required="required" value={this.state.description} onChange={this.handleInputChange} maxLength="255"/>
                 </div>
                 <div className="form-group">
-                  <label>Cantidad</label>
+                  <label>Quantity</label>
                   <input type="number" className="form-control" name="amount" id="amount" placeholder="Introduzca una cantidad" required="required" value={this.state.amount} onChange={this.handleInputChange} min="1" step="0.01"/>
-                  <small id="amountHelp" className="form-text text-muted">Introduzca una cantidad positiva.</small>
+                  <small id="amountHelp" className="form-text text-muted">Introduce a positive quantity.</small>
                 </div>
-                <button type="submit" className="btn btn-primary">Enviar</button>
+                <button type="submit" className="btn btn-primary">Send</button>
               </form>
             </div>
           </div>
